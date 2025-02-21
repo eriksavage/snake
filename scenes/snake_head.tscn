@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cyukhpcs374ta"]
 
-[ext_resource type="Script" path="res://scripts/Snake.cs" id="1_7g4ue"]
+[ext_resource type="Script" path="res://scripts/SnakeHead.cs" id="1_mow08"]
 [ext_resource type="Texture2D" uid="uid://cyj7d83v8c8wr" path="res://assets/sprites/playerGrey_walk1.png" id="1_r07yx"]
 [ext_resource type="Texture2D" uid="uid://dvpxyfgpmi4ba" path="res://assets/sprites/playerGrey_walk2.png" id="2_wc1u7"]
 [ext_resource type="Texture2D" uid="uid://dw3gbugg4mhnm" path="res://assets/sprites/playerGrey_up2.png" id="3_3wc2r"]
@@ -34,16 +34,19 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_7sbaj"]
 radius = 27.0
 
-[node name="Snake" type="Area2D"]
+[node name="SnakeHead" type="Area2D"]
 position = Vector2(0, 3)
-script = ExtResource("1_7g4ue")
+script = ExtResource("1_mow08")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -6)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_5wb2a")
 animation = &"eat"
 autoplay = "eat"
+offset = Vector2(0, 12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -7)
+position = Vector2(0, -6.75)
 shape = SubResource("CircleShape2D_7sbaj")

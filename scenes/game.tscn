@@ -1,9 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddq4jjfwby3lj"]
+[gd_scene load_steps=4 format=3 uid="uid://ddq4jjfwby3lj"]
 
-[ext_resource type="PackedScene" uid="uid://cyukhpcs374ta" path="res://scenes/player.tscn" id="1_nqt70"]
+[ext_resource type="PackedScene" uid="uid://cyukhpcs374ta" path="res://scenes/snake_head.tscn" id="1_nqt70"]
+[ext_resource type="PackedScene" uid="uid://bvo4n4c1c6n0" path="res://scenes/snake_body.tscn" id="2_eyqvm"]
+[ext_resource type="Script" path="res://scripts/SnakeBody.cs" id="3_cttcj"]
 
 [node name="Game" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource("1_nqt70")]
+[node name="Snake" type="Node2D" parent="."]
+
+[node name="SnakeHead" parent="Snake" instance=ExtResource("1_nqt70")]
+position = Vector2(6, -2)
+rotation = 4.71239
+
+[node name="SnakeBody" parent="Snake" instance=ExtResource("2_eyqvm")]
+position = Vector2(-55, -2)
+script = ExtResource("3_cttcj")
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvo4n4c1c6n0"]
+
+[ext_resource type="Texture2D" uid="uid://b201qmtvxp6c3" path="res://assets/sprites/player_body.png" id="1_ep1xg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3idqf"]
+radius = 54.037
+
+[node name="SnakeBody" type="Area2D"]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ep1xg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_3idqf")
